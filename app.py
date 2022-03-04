@@ -24,5 +24,5 @@ def home():
     img_name = request.args['image_name']
     return client.detect_labels(Image={ 'S3Object': {
         'Bucket' : 'gauravktest',
-        'Name' : image_name
+        'Name' : img_name
     } } )
