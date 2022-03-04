@@ -1,5 +1,5 @@
 import flask
-from flask import request, jsonify, make_response
+from flask import request
 import csv
 import boto3
 
@@ -19,8 +19,8 @@ client = boto3.client('rekognition',
                       region_name='us-east-2')
 
 
-@app.route('/', methods=['GET'])
-def home():
+@app.route('/detect-labels', methods=['GET'])
+def detect_labels_service():
     img_name = request.args['image_name']
     return client.detect_labels(Image={ 'S3Object': {
         'Bucket' : 'moderationbkt',
