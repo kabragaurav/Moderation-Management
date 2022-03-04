@@ -23,6 +23,6 @@ client = boto3.client('rekognition',
 def home():
     img_name = request.args['image_name']
     return client.detect_labels(Image={ 'S3Object': {
-        'Bucket' : 'gauravktest',
+        'Bucket' : 'moderationbkt',
         'Name' : img_name
     } } )
