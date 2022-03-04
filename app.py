@@ -16,7 +16,7 @@ with open('./aws_credentials.csv', 'r') as f:
 client = boto3.client('rekognition', 
                       aws_access_key_id=access_key_id, 
                       aws_secret_access_key=secret_access_key,
-                      region_name='us-west-2')
+                      region_name='us-east-2')
 
 
 @app.route('/', methods=['GET'])
