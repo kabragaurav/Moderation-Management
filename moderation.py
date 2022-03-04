@@ -8,7 +8,9 @@ def pretty_print_response(response):
   json_object = json.loads(json_data)
   json_formatted_str = json.dumps(json_object, indent=2)
   print(json_formatted_str)
+  print("\n ############################################ \n")
 
+# TODO : try except
 
 if __name__ == '__main__':
   photo = sys.argv[1]
