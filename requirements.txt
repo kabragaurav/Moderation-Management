@@ -1,4 +1,4 @@
 flask
 gunicorn
-boto3==1.4.4
+boto3
 csv
