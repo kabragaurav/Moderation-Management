@@ -22,4 +22,4 @@ client = boto3.client('rekognition',
 @app.route('/', methods=['GET'])
 def home():
     img_bytes = request.args['arg1']
-    return make_response(jsonify(client.detect_labels(Image={ 'Bytes': img_bytes })), 200)
+    return client.detect_labels(Image={ 'Bytes': img_bytes } )
