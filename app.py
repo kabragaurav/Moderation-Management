@@ -1,5 +1,5 @@
 import flask
-from flask import request
+from flask import request, jsonify, make_response
 import csv
 import boto3
 
@@ -22,4 +22,4 @@ client = boto3.client('rekognition',
 @app.route('/', methods=['GET'])
 def home():
     img_bytes = request.args['arg1']
-    return client.detect_labels(Image={ 'Bytes': img_bytes })
+    return make_response(jsonify(client.detect_labels(Image={ 'Bytes': img_bytes })), 200)
