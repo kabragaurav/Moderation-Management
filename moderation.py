@@ -19,5 +19,9 @@ if __name__ == '__main__':
   # Use something like Amazon S3 to keep files.
   request_url = 'https://projectmoderation.herokuapp.com/detect-labels?image_name=' + photo
   response = requests.get(request_url)
+  pretty_print_response(response)
 
+
+  request_url = 'https://projectmoderation.herokuapp.com/detect_moderation_labels?image_name=' + photo
+  response = requests.get(request_url)
   pretty_print_response(response)
